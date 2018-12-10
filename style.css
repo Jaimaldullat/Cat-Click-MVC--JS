@@ -1,0 +1,45 @@
+* {
+    margin: 0;
+    padding: 0;
+    color: #555;
+    font-family: sans-serif;
+
+}
+
+#wrapper {
+    text-align: center;
+}
+
+#wrapper h2 {
+    margin: 20px auto;
+    font-weight: bold;
+    font-size: 35px;
+    text-decoration: underline;
+}
+
+#cats-list {
+    list-style: none;
+}
+
+#cats-list li {
+    display: inline-block;
+    border: 2px solid grey;
+    margin: 10px;
+    padding: 5px;
+    border-radius: 8px;
+    color: #000;
+    background: radial-gradient(circle at bottom center, #FFC837 15px, #FF8008);
+    -webkit-box-shadow: 0 10px 10px -5px rgba(0, 0, 0, 0.2);
+    box-shadow: 0 10px 10px -5px rgba(0, 0, 0, 0.2);
+    cursor: pointer;
+    letter-spacing: 1.2px
+}
+
+#cats-list li.active {
+    background: none;
+}
+
+#cat-image {
+    width: 300px;
+    height: auto;
+}
