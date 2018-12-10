@@ -1,3 +1,7 @@
+/**************
+MODEL
+***************/
+
 var model = {
     currentCat: null,
     cats: [
@@ -22,9 +26,13 @@ var model = {
      ],
 };
 
-var controller = {
-    init: () => {
+/**************
+Controller
+***************/
 
+var controller = {
+    // Initialize
+    init: () => {
         catView.init();
         catListView.init();
     },
@@ -43,9 +51,15 @@ var controller = {
     }
 };
 
+/**************
+Cat List View
+***************/
+
 var catListView = {
     init: () => {
+        // Get catlist UL elemnt
         this.catListElement = document.getElementById('cats-list');
+        // Call catlistview
         catListView.render();
     },
     render: () => {
@@ -65,24 +79,34 @@ var catListView = {
     }
 };
 
+/**************
+Single Cat View
+***************/
+
 var catView = {
+    // Initialize
     init: () => {
+        // Result elements
         this.catName = document.getElementById('cat-name');
         this.catImage = document.getElementById('cat-image');
         this.catClicks = document.getElementById('cat-clicks');
 
+        // Add image click event listener
         this.catImage.addEventListener('click', () => {
             controller.incrementClicks();
         });
+        // Set first cat in starting
         controller.setCurrentCat(model.cats[0]);
         catView.render();
     },
     render: () => {
+        // Get current cat and show on page
         var currentcat = controller.getCurrentCat();
 
         this.catName.innerHTML = currentcat.name;
         this.catImage.setAttribute('src', currentcat.picture);
-        this.catClicks.innerHTML = currentcat.clicks;
+        this.catClicks.innerHTML = 'Click count: ' + currentcat.clicks;
     }
 }
+// Initialize process
 controller.init();

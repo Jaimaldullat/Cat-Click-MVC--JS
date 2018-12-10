@@ -10,11 +10,12 @@
     text-align: center;
 }
 
-#wrapper h2 {
+#wrapper > h2 {
     margin: 20px auto;
     font-weight: bold;
     font-size: 35px;
     text-decoration: underline;
+    color: #FF8008;
 }
 
 #cats-list {
